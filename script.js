@@ -40,9 +40,11 @@ function buildOrderSummary(form) {
     `Channel: ${formData.get("channel") || ""}`,
     `Items: ${items.length ? items.join(", ") : "None selected yet"}`,
     `Pack size: ${formData.get("packSize") || ""}`,
+    `Quantity: ${formData.get("quantity") || "1"}`,
     `Needed by: ${formData.get("neededBy") || ""}`,
     `Delivery area: ${formData.get("deliveryArea") || ""}`,
     `Notes: ${formData.get("notes") || ""}`,
+    `Contact consent: ${formData.get("contactConsent") ? "Yes" : "No"}`,
   ].join("\n");
 }
 

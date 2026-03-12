@@ -243,7 +243,7 @@
               <div class="field-row">
                 <label class="field">
                   <span>Name</span>
-                  <input type="text" name="customerName" placeholder="Your name">
+                  <input type="text" name="customerName" placeholder="Your name" required>
                 </label>
                 <label class="field">
                   <span>Business or event</span>
@@ -254,11 +254,11 @@
               <div class="field-row">
                 <label class="field">
                   <span>Cell number</span>
-                  <input type="tel" name="customerPhone" placeholder="Example: 076 123 4567">
+                  <input type="tel" name="customerPhone" placeholder="Example: 076 123 4567" required>
                 </label>
                 <label class="field">
                   <span>Email address</span>
-                  <input type="email" name="customerEmail" placeholder="name@example.com">
+                  <input type="email" name="customerEmail" placeholder="name@example.com" required>
                 </label>
               </div>
 
@@ -307,7 +307,7 @@
               <div class="field-row">
                 <label class="field">
                   <span>Pack size</span>
-                  <select name="packSize">
+                  <select name="packSize" required>
                     <option value="Tasting Pack - R95">Tasting Pack - R95</option>
                     <option value="Signature Jar - R129">Signature Jar - R129</option>
                     <option value="Hosting Pouch - R189">Hosting Pouch - R189</option>
@@ -316,20 +316,33 @@
                   </select>
                 </label>
                 <label class="field">
-                  <span>Needed by</span>
-                  <input type="text" name="neededBy" placeholder="Example: 22 March 2026">
+                  <span>Quantity</span>
+                  <input type="number" name="quantity" min="1" value="1" required>
                 </label>
               </div>
 
-              <label class="field">
-                <span>Delivery area</span>
-                <input type="text" name="deliveryArea" placeholder="Johannesburg, Cape Town, Sandton, etc.">
-              </label>
+              <div class="field-row">
+                <label class="field">
+                  <span>Needed by</span>
+                  <input type="text" name="neededBy" placeholder="Example: 22 March 2026">
+                </label>
+                <label class="field">
+                  <span>Delivery area</span>
+                  <input type="text" name="deliveryArea" placeholder="Johannesburg, Cape Town, Sandton, etc." required>
+                </label>
+              </div>
 
               <label class="field">
                 <span>Order notes</span>
                 <textarea name="notes" rows="5" placeholder="Any serving notes, volumes, gift message, or venue requirements"></textarea>
               </label>
+
+              <label class="checkbox-field">
+                <input type="checkbox" name="contactConsent" required>
+                <span>I agree to be contacted about this order request.</span>
+              </label>
+
+              <p class="form-note">After you send this request, MIXENI will confirm availability, pricing, and delivery timing directly.</p>
 
               <div class="hero-actions">
                 <button class="button button-primary" type="submit">Generate order message</button>
@@ -353,9 +366,11 @@ Order type: Home event order
 Channel: WhatsApp
 Items: None selected yet
 Pack size: Tasting Pack - R95
+Quantity: 1
 Needed by: 
 Delivery area: 
 Notes: 
+Contact consent: Yes
 </pre>
               <p class="micro-copy">
                 Orders are confirmed on WhatsApp at 076 1947454. TikTok at @mixeni_za is used for public brand discovery.
