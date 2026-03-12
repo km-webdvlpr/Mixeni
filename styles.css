@@ -334,7 +334,8 @@ h2 {
 .cards,
 .metrics-grid,
 .roadmap-grid,
-.slide-stack {
+.slide-stack,
+.deck-grid {
   display: grid;
   gap: 18px;
 }
@@ -566,6 +567,71 @@ pre {
   box-shadow: var(--shadow);
 }
 
+.deck-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.deck-hero::after {
+  content: "";
+  position: absolute;
+  right: -60px;
+  top: -40px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(183, 136, 45, 0.22), transparent 65%);
+}
+
+.deck-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.deck-slide {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 2px);
+  background: linear-gradient(145deg, rgba(255, 251, 244, 0.94), rgba(243, 232, 214, 0.84));
+  box-shadow: var(--shadow);
+}
+
+.deck-slide span {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.deck-slide h3 {
+  margin: 0 0 10px;
+  font-size: 2rem;
+}
+
+.deck-slide p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.slide-kicker {
+  margin-bottom: 12px !important;
+  color: var(--green) !important;
+  font-weight: 700;
+}
+
+.feature-slide {
+  background: linear-gradient(155deg, rgba(39, 67, 55, 0.96), rgba(24, 37, 31, 0.98));
+  color: #fbf2e6;
+}
+
+.feature-slide p,
+.feature-slide .slide-kicker {
+  color: rgba(251, 242, 230, 0.84) !important;
+}
+
 .micro-copy {
   margin-top: 16px;
   font-size: 0.9rem;
@@ -579,6 +645,7 @@ pre {
   .roadmap-grid,
   .metrics-grid,
   .slide-stack,
+  .deck-grid,
   .field-row,
   .sku-grid {
     grid-template-columns: 1fr;

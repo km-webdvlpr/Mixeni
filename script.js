@@ -3,6 +3,7 @@ const navLinks = document.querySelector(".nav-links");
 const orderForm = document.querySelector("#order-form");
 const orderSummary = document.querySelector("#order-summary");
 const copyOrderButton = document.querySelector("#copy-order");
+const sendWhatsAppButton = document.querySelector("#send-whatsapp");
 
 if (navToggle && navLinks) {
   navToggle.addEventListener("click", () => {
@@ -71,5 +72,12 @@ if (copyOrderButton && orderSummary) {
         copyOrderButton.textContent = "Copy summary";
       }, 1200);
     }
+  });
+}
+
+if (sendWhatsAppButton && orderSummary) {
+  sendWhatsAppButton.addEventListener("click", () => {
+    const text = encodeURIComponent(orderSummary.textContent);
+    window.open(`https://wa.me/27761947454?text=${text}`, "_blank", "noopener,noreferrer");
   });
 }
