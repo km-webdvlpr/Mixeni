@@ -35,9 +35,9 @@ body {
 
 .public-body {
   background:
-    radial-gradient(circle at top left, rgba(198, 146, 24, 0.16), transparent 24%),
-    radial-gradient(circle at 78% 10%, rgba(85, 107, 47, 0.18), transparent 30%),
-    linear-gradient(180deg, #d5dac1 0%, #e2e3d3 52%, #efe7d8 100%);
+    radial-gradient(circle at top left, rgba(198, 146, 24, 0.12), transparent 22%),
+    radial-gradient(circle at 78% 10%, rgba(85, 107, 47, 0.16), transparent 28%),
+    linear-gradient(180deg, #f7f8f1 0%, #edf1e3 44%, #f7f4ea 100%);
 }
 
 .hub-body,
@@ -161,7 +161,7 @@ h3 {
 .public-copy,
 .hub-copy {
   padding: 42px;
-  background: linear-gradient(145deg, rgba(255, 250, 243, 0.96), rgba(245, 233, 212, 0.92));
+  background: linear-gradient(145deg, rgba(255, 255, 252, 0.98), rgba(245, 244, 236, 0.94));
 }
 
 .eyebrow {
@@ -219,6 +219,7 @@ h1 {
 .button-primary {
   background: var(--green);
   color: #fff;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.18);
 }
 
 .button-secondary {
@@ -237,20 +238,34 @@ h1 {
 .ticker span {
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(155, 45, 48, 0.08);
-  border: 1px solid rgba(155, 45, 48, 0.12);
-  color: var(--red);
+  background: rgba(85, 107, 47, 0.08);
+  border: 1px solid rgba(85, 107, 47, 0.16);
+  color: var(--green);
   font-size: 0.88rem;
 }
 
 .public-card {
   overflow: hidden;
-  background: linear-gradient(180deg, #2f3c1e 0%, #161810 100%);
+  background:
+    linear-gradient(135deg, rgba(246, 196, 0, 0.18), transparent 24%),
+    linear-gradient(180deg, #5c742d 0%, #26361b 58%, #14160f 100%);
   color: #f8f0e4;
 }
 
 .poster {
   padding: 24px;
+}
+
+.poster::before {
+  content: "ORDER DESK";
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color: rgba(248, 240, 228, 0.76);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
 }
 
 .poster-frame {
@@ -370,7 +385,8 @@ h2 {
 .summary-card,
 .channel-card,
 .order-panel,
-.slide-card {
+.slide-card,
+.package-card {
   padding: 26px;
   background: var(--paper);
   backdrop-filter: blur(8px);
@@ -380,7 +396,8 @@ h2 {
 .roadmap-card h3,
 .summary-card h3,
 .channel-card h3,
-.slide-card h3 {
+.slide-card h3,
+.package-card h3 {
   margin: 0 0 10px;
   font-size: 1.85rem;
 }
@@ -392,14 +409,18 @@ h2 {
 .summary-card p,
 .channel-card li,
 .slide-card p,
-.micro-copy {
+.micro-copy,
+.package-card li,
+.package-copy,
+.pricing-note {
   color: var(--muted);
   line-height: 1.7;
 }
 
 .card ul,
 .roadmap-card ul,
-.channel-card ol {
+.channel-card ol,
+.package-card ul {
   margin: 14px 0 0;
   padding-left: 18px;
 }
@@ -444,6 +465,70 @@ h2 {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 18px;
+}
+
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.package-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(85, 107, 47, 0.14);
+  border-radius: calc(var(--radius) + 2px);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 244, 236, 0.94));
+  box-shadow: var(--shadow);
+}
+
+.package-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -20px -42px auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(85, 107, 47, 0.1), transparent 66%);
+}
+
+.featured-package {
+  background:
+    linear-gradient(180deg, rgba(85, 107, 47, 0.98), rgba(59, 78, 31, 0.98));
+  color: #fffdf6;
+}
+
+.featured-package .package-tag,
+.featured-package .package-price,
+.featured-package h3 {
+  color: #fffdf6;
+}
+
+.featured-package .package-copy,
+.featured-package li {
+  color: rgba(255, 253, 246, 0.84);
+}
+
+.package-tag {
+  margin: 0 0 12px;
+  color: var(--gold);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.package-price {
+  margin: 0 0 12px;
+  color: var(--green);
+  font-size: 1.55rem;
+  font-weight: 700;
+}
+
+.pricing-note {
+  margin: 16px 0 0;
+  max-width: 70ch;
 }
 
 .order-form {
@@ -493,7 +578,7 @@ h2 {
   gap: 10px;
   align-items: center;
   padding: 14px;
-  border: 1px solid rgba(22, 19, 16, 0.12);
+  border: 1px solid rgba(85, 107, 47, 0.14);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.76);
 }
@@ -678,6 +763,7 @@ pre {
   .order-layout,
   .three-up,
   .two-up,
+  .package-grid,
   .roadmap-grid,
   .metrics-grid,
   .slide-stack,
