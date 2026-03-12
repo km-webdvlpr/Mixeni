@@ -731,6 +731,11 @@ pre {
   color: #f8f0e4;
 }
 
+.charcoal h2 {
+  color: #f6f1e6;
+  text-shadow: 0 2px 14px rgba(16, 16, 16, 0.16);
+}
+
 .charcoal .eyebrow {
   color: #f2c14b;
 }
