@@ -253,6 +253,17 @@
 
               <div class="field-row">
                 <label class="field">
+                  <span>Cell number</span>
+                  <input type="tel" name="customerPhone" placeholder="Example: 076 123 4567">
+                </label>
+                <label class="field">
+                  <span>Email address</span>
+                  <input type="email" name="customerEmail" placeholder="name@example.com">
+                </label>
+              </div>
+
+              <div class="field-row">
+                <label class="field">
                   <span>Order type</span>
                   <select name="orderType">
                     <option value="Home event order">Home event order</option>
@@ -336,6 +347,8 @@
 
 Name: 
 Business or event: 
+Cell number: 
+Email address: 
 Order type: Home event order
 Channel: WhatsApp
 Items: None selected yet
@@ -352,7 +365,7 @@ Notes:
               <h3>Channel flow</h3>
               <ol>
                 <li>Customer builds the request here.</li>
-                <li>You confirm price, timing, and delivery manually on WhatsApp.</li>
+                <li>You confirm price, timing, and delivery using the cell number or email provided.</li>
                 <li>Customer pays by your preferred method.</li>
                 <li>You pack, dispatch, and confirm delivery.</li>
               </ol>

@@ -34,6 +34,8 @@ function buildOrderSummary(form) {
     "",
     `Name: ${formData.get("customerName") || ""}`,
     `Business or event: ${formData.get("customerBusiness") || ""}`,
+    `Cell number: ${formData.get("customerPhone") || ""}`,
+    `Email address: ${formData.get("customerEmail") || ""}`,
     `Order type: ${formData.get("orderType") || ""}`,
     `Channel: ${formData.get("channel") || ""}`,
     `Items: ${items.length ? items.join(", ") : "None selected yet"}`,
